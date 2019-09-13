@@ -12,7 +12,7 @@ function ajaxTest(){
 $(document).ready(function(){
 	$("#btnView").on("click", function() {
 		$.ajax({
-			url : "../ajaxMessage/mailListAjaxCallTest",
+			url : "../ajaxMessage/mailListData",
 			type:"post",
 			dataType:"json",
 			success : function(data){

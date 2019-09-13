@@ -6,12 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
-<body align="center">
-	<div>
+<body>
+	<div align="center">
     <h1>Hello Spring Boot!</h1>
-    <h2>- 2019년도가 다 가기전까지 해야할 내용!</h2>
-    <h2>- WEB에서 사용하는 기술을 공부하기!</h2>
-    <h2>- 주제 : 여러 기능들이 들어있는 게시판 만들기 </h2>
+    <h2> 2019년도가 다 가기전까지 해야할 내용!</h2>
+    <h2> WEB에서 사용하는 기술을 공부하기!</h2>
+    <h2> 주제 : 여러 기능들이 들어있는 게시판 만들기 </h2>
     <table>
     	<tr>요구조건</tr>
 	    <tr>
