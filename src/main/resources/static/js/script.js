@@ -10,6 +10,32 @@ function ajaxTest(){
 }
 
 $(document).ready(function(){
+	$("#btnAdd").on("click", function() {
+		console.log($('input[name="userid"]').val());
+		console.log($('input[name="name"]').val());
+		console.log($('input[name="address"]').val());
+		console.log($('input[name="phonenumber"]').val());
+		
+		var userId=$('input[name="userid"]').val();
+		var userName=$('input[name="name"]').val();
+		var addRess=$('input[name="address"]').val();
+		var phoneNumber=$('input[name="phonenumber"]').val();
+		
+		$.ajax({
+			url : "./insert",
+			type:"post",
+			contentType : "application/json",
+			dataType:"json",
+			data : { userid:userId, username: userName, address: addRess, phonenumber: phoneNumber},
+			success : function(data){
+			     console.log(data);
+			 },
+			 error : function(request,status,error){
+				 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			 }
+		});
+	});
+	
 	$("#btnView").on("click", function() {
 		$.ajax({
 			url : "../ajaxMessage/mailListData",
@@ -21,7 +47,7 @@ $(document).ready(function(){
 			     console.log(data[0]);
 			     console.log(data[0]["idx"]);
 			     console.log(data[0]["address"]);
-			     SlickGridTest(data);
+			     SlickGridLoad(data);
 			 },
 			 error : function(equest,status,error){
 				 
@@ -29,9 +55,10 @@ $(document).ready(function(){
 		});
 		
 	});
+	
 });
 
-function SlickGridTest(data){
+function SlickGridLoad(data){
 	var grid;
 	var columns = [
 	   {id: "idx", name: "Idx", field: "idx"},

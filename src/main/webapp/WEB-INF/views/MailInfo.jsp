@@ -16,12 +16,36 @@
 	</head>
 	<body>
 		<h2 align="center">회원 정보</h2>
+
+		
 		<button id="btnView" type="button">조회</button>
 		<button id="btnView2x" type="button" onclick="javascript:ajaxTest()">Ajax_테스트하기</button>
 		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/lib/jquery.event.drag-2.2.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/slick.core.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/slick.grid.js"></script>	
+		<table border="0" cellpadding="10" align="center">
+          	    <tr>
+          	      <td> USER ID</td>
+          	      <td><input type="text" name="userid"></td>
+          	    </tr>
+          	    <tr> 
+                  <td> NAME</td>
+                  <td><input type="text" name="name"></td>
+                </tr>
+          	    <tr>
+          	      <td> ADDRESS</td>
+          	      <td><input type="text" name="address"></td>
+          	    </tr>
+          	    <tr>
+          	      <td> PHONE NUMBER</td>
+          	      <td><input type="text" name="phonenumber"></td>
+          	    </tr>
+          	    <tr>
+          	      <td><button id="btnAdd" type="button">추가</button></td>
+          	    </tr>
+		</table>
+		
 		<table width="100%">
 			  <tr>
 			    <td valign="top" width="50%">

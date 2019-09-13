@@ -47,6 +47,7 @@ public class MailController {
 	@RequestMapping(value="/insert", method = RequestMethod.POST)
 	public RESTResponse insertMail(@RequestBody MailInfoVO mailinfo) throws Exception {
 		// TODO Auto-generated method stub
+		System.out.println(mailinfo.toString());
 		RESTResponse restR = new RESTResponse();
 		
 		mailRepository.save(mailinfo);
