@@ -16,7 +16,7 @@ public class AjaxController {
 	@Autowired
 	private MailRepository mailRepository;
 	
-	@RequestMapping(value="/mailListAjaxCallTest")
+	@RequestMapping(value="/mailListData")
 	public List<MailInfoVO> getMailList() throws Exception{
 		return mailRepository.findAll();
 	}
