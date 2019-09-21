@@ -19,33 +19,22 @@ $(document).ready(function(){
 	}
 	
 	$("#btnAdd").on("click", function() {
-		alert("hello");
-		const formData = $("#insertform").serializeObject();
-		console.log(formData);
+		var formData = $("#insertform").serializeObject();
+		console.log("formData : ", formData);
 		
-		var userId=$('input[name="userid"]').val();
-		var userName=$('input[name="name"]').val();
-		var addRess=$('input[name="address"]').val();
-		var phoneNumber=$('input[name="phonenumber"]').val();
-		
-		console.log($('input[name="userid"]').val());
-		console.log($('input[name="name"]').val());
-		console.log($('input[name="address"]').val());
-		console.log($('input[name="phonenumber"]').val());
-		
-//		$.ajax({
-//			url : "./insert",
-//			type:"post",
-//			contentType : "application/json",
-//			dataType:"json",
-//			data : JSON.stringify(formData),
-//			success : function(data){
-//			     console.log(data);
-//			 },
-//			 error : function(request,status,error){
-//				 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-//			 }
-//		});
+		$.ajax({
+			url : "./insert",
+			type:"post",
+			contentType : "application/json",
+			dataType:"json",
+			data : JSON.stringify(formData),
+			success : function(data){
+			     console.log(data);
+			 },
+			 error : function(request,status,error){
+				 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			 }
+		});
 	});
 	
 	$("#btnView").on("click", function() {
@@ -54,15 +43,16 @@ $(document).ready(function(){
 			type:"post",
 			dataType:"json",
 			success : function(data){
-			     console.log(data);
-			     console.log(data.length);
-			     console.log(data[0]);
-			     console.log(data[0]["idx"]);
-			     console.log(data[0]["address"]);
-			     SlickGridLoad(data);
+				if(data==0||data==null){
+					console.log("현재 데이터가 존재하지 않습니다.");
+				}
+				console.log("Success Data : ", data);
+				console.log("Data Count : ", data.length);
+				SlickGridLoad(data);
 			 },
-			 error : function(equest,status,error){
-				 
+			 error : function(request,status,error){
+				alert("Error Message [code = "+ request.status + " message = " + request.responseText + " error = " + error+"]");
+				console.log("Error Message [code = "+ request.status + " message = " + request.responseText + " error = " + error+"]");
 			 }
 		});
 		

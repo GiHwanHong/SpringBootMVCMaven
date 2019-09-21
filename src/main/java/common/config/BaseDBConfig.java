@@ -59,7 +59,7 @@ public class BaseDBConfig {
 			EntityManagerFactoryBuilder builder,
 			@Qualifier("DataSource_base") DataSource dataSource) {
 		
-		// JPA Vendor setting (Postgresql
+		// JPA Vendor setting (ORACLE
 		HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.Oracle10gDialect");
         jpaVendorAdapter.setShowSql(true);
