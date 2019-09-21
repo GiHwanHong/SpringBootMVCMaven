@@ -1,39 +1,51 @@
-function ajaxTest(){
-	$.ajax({
-	    url : "./mailList",
-		type:"post",
-		dataType:"text",
-		success : function(data){
-		     console.log(data);
-		 }
-	 });
-}
-
 $(document).ready(function(){
+	jQuery.fn.serializeObject = function() {
+		var obj = null; 
+		try {
+			if(this[0].tagName && this[0].tagName.toUpperCase() == "FORM" ) {
+				var arr = this.serializeArray(); 
+				console.log("SerializeArrayData : ",arr);
+				if(arr){ 
+					obj = {}; 
+					jQuery.each(arr, function() { 
+						obj[this.name] = this.value; 
+					}); 
+				} 
+			} 
+		}catch(e) {
+			alert(e.message); 
+		}finally {} 
+		return obj;
+	}
+	
 	$("#btnAdd").on("click", function() {
-		console.log($('input[name="userid"]').val());
-		console.log($('input[name="name"]').val());
-		console.log($('input[name="address"]').val());
-		console.log($('input[name="phonenumber"]').val());
+		alert("hello");
+		const formData = $("#insertform").serializeObject();
+		console.log(formData);
 		
 		var userId=$('input[name="userid"]').val();
 		var userName=$('input[name="name"]').val();
 		var addRess=$('input[name="address"]').val();
 		var phoneNumber=$('input[name="phonenumber"]').val();
 		
-		$.ajax({
-			url : "./insert",
-			type:"post",
-			contentType : "application/json",
-			dataType:"json",
-			data : { userid:userId, username: userName, address: addRess, phonenumber: phoneNumber},
-			success : function(data){
-			     console.log(data);
-			 },
-			 error : function(request,status,error){
-				 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			 }
-		});
+		console.log($('input[name="userid"]').val());
+		console.log($('input[name="name"]').val());
+		console.log($('input[name="address"]').val());
+		console.log($('input[name="phonenumber"]').val());
+		
+//		$.ajax({
+//			url : "./insert",
+//			type:"post",
+//			contentType : "application/json",
+//			dataType:"json",
+//			data : JSON.stringify(formData),
+//			success : function(data){
+//			     console.log(data);
+//			 },
+//			 error : function(request,status,error){
+//				 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//			 }
+//		});
 	});
 	
 	$("#btnView").on("click", function() {
@@ -86,4 +98,14 @@ function SlickGridLoad(data){
 		   };
 	}  
 	grid = new Slick.Grid("#myGrid", showData, columns, options);
+}
+function ajaxTest(){
+	$.ajax({
+	    url : "./mailList",
+		type:"post",
+		dataType:"text",
+		success : function(data){
+		     console.log(data);
+		 }
+	 });
 }
