@@ -9,7 +9,7 @@
 <title>MODIFY</title>
 </head>
 <body>
-	<h1>삭제결과</h1>
+	<button id="btnDelete" type="button">삭제</button>
 	<table class="table table-striped table-bordered table-hover">
         <tr align="center"> 
             <td>status</td>

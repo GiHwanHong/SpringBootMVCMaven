@@ -4,7 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="/resources/js/script.js"></script> 
+    <title>indexPage</title>
 </head>
 <body>
 	<div align="center">
@@ -29,6 +31,7 @@
     	</tr>
     </table>
     <h1>- 남들 다아는 WEB구조 남들보다 더 공부하기! FullStack 개발자를 향하여!!</h1>
+    <button id="btnView2x" type="button" onclick="javascript:ajaxTest()">Ajax_테스트하기</button>
     <a href="http://localhost:8080/mailInfo/mailList">MailInfo DataBase 내용확인하기 </a><br>
     <a href="http://localhost:8080/person/getList">PerSon DataBase JSON형식으로 확인하기</a>
     </div>

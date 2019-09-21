@@ -57,6 +57,10 @@ $(document).ready(function(){
 		});
 		
 	});
+	$("#btnDelete").on("click", function() {
+		alert('Delete Button');
+		
+	});
 	
 });
 
@@ -91,7 +95,7 @@ function SlickGridLoad(data){
 }
 function ajaxTest(){
 	$.ajax({
-	    url : "./mailList",
+	    url : "./",
 		type:"post",
 		dataType:"text",
 		success : function(data){

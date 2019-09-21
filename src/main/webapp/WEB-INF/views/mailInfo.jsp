@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://unpkg.com/slickgrid@2.3.3/slick.grid.css" />
-    	<link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/css/smoothness/jquery-ui-1.8.24.custom.css" />
+    	<!-- <link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/css/smoothness/jquery-ui-1.8.24.custom.css" /> -->
     	<link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/examples/examples.css" />
     	<script src="//code.jquery.com/jquery.js"></script>
         <script type="text/javascript" src="/resources/js/script.js"></script> 
@@ -18,13 +18,13 @@
 		<h2 align="center">회원 정보</h2>
 		
 		<button id="btnView" type="button">조회</button>
-		<button id="btnView2x" type="button" onclick="javascript:ajaxTest()">Ajax_테스트하기</button>
+		
 		
 		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/lib/jquery.event.drag-2.2.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/slick.core.js"></script>
 		<script src="http://mleibman.github.com/SlickGrid/slick.grid.js"></script>	
-		<jsp:include page="/WEB-INF/views/MailInfo_add.jsp"/>
+		<jsp:include page="/WEB-INF/views/mailInfo_add.jsp"/>
 		<table width="100%">
 			  <tr>
 			    <td valign="top" width="50%">

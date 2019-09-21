@@ -27,7 +27,7 @@ public class MailController {
 		
 	@RequestMapping(value="/mailList")
 	public ModelAndView getMailList(Model model) throws Exception{
-		return new ModelAndView("MailInfo");
+		return new ModelAndView("mailInfo");
 	}
 	
 	@RequestMapping(value="/delete/{id}", method = RequestMethod.POST)
@@ -61,7 +61,7 @@ public class MailController {
 	public ModelAndView updateMailGet(@PathVariable("no") int idx) throws Exception {
 		// TODO Auto-generated method stub
 		//mailRepository.save(mailInfo);
-	    return new ModelAndView("MailInfo_modify","mailInfo", mailRepository.findByIdx(idx));
+	    return new ModelAndView("mailInfo_Modify","mailInfo", mailRepository.findByIdx(idx));
 	}
 	
 	@RequestMapping(value="/update/{id}", method = RequestMethod.POST)
