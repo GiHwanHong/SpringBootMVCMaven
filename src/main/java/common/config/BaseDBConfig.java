@@ -28,9 +28,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ConfigurationProperties("oracle")
 @MapperScan(value = "common.mapper", sqlSessionFactoryRef="sqlSessionFactory_base")
 @EnableJpaRepositories(basePackages= {"common.repository"},
-		entityManagerFactoryRef = "entityManagerFactory_base",
-		transactionManagerRef = "transactionManager_base"
-		)
+						entityManagerFactoryRef = "entityManagerFactory_base",
+						transactionManagerRef = "transactionManager_base"
+						)
 @EnableTransactionManagement
 
 public class BaseDBConfig {
@@ -40,7 +40,6 @@ public class BaseDBConfig {
     public DataSource datasource01() {
         return DataSourceBuilder.create().build();
     }
-    
 	
 	@Bean(name = "sqlSessionFactory_base")
     public SqlSessionFactory sqlSessionFactory_base(@Qualifier("DataSource_base")DataSource dataSource)throws Exception{
@@ -67,8 +66,7 @@ public class BaseDBConfig {
         jpaVendorAdapter.setDatabase(Database.ORACLE);
 		
 		// Make entityManagerFactory_
-		LocalContainerEntityManagerFactoryBean  em =  builder.dataSource(dataSource)
-				.packages("common.entity").build();
+		LocalContainerEntityManagerFactoryBean  em =  builder.dataSource(dataSource).packages("common.entity").build();
 		em.setPersistenceUnitName("jpa_test");
 		em.setJpaVendorAdapter(jpaVendorAdapter);
 		em.setJpaProperties(additionalJpaProperties());
@@ -93,7 +91,7 @@ public class BaseDBConfig {
 	        //properties.setProperty("hibernate.order_updates", "true");
 	        //properties.setProperty("hibernate.jdbc.batch_versioned_data", "true");
 	        return properties;
-	    }
+    }
 	
 	
 	@Bean(name = "transactionManager_base")

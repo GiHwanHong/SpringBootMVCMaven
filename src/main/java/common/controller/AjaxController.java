@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import common.entity.MailInfoVO;
 import common.repository.MailRepository;
+import lombok.extern.slf4j.Slf4j;
 
 @RequestMapping(value = "/ajaxMessage")
 @RestController
+@Slf4j
 public class AjaxController {
 	
 	@Autowired
@@ -18,6 +20,7 @@ public class AjaxController {
 	
 	@RequestMapping(value="/mailListData")
 	public List<MailInfoVO> getMailList() throws Exception{
+		log.info("[mailListData]");
 		return mailRepository.findAll();
 	}
 }
